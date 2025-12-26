@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointment Confirmed</title>
+  <style>
+    body { font-family: Arial; background: #f0f8ff; text-align: center; padding-top: 60px; }
+    .box { background: white; padding: 30px; width: 420px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px #aaa; }
+    h2 { color: green; }
+    button { padding: 5px 10px; margin-top: 20px; background: #0074D9; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Appointment Confirmed ✅</h2>
+  <p><b>Name:</b> <span id="name"></span></p>
+  <p><b>Age:</b> <span id="age"></span></p>
+  <p><b>Doctor:</b> <span id="doctor"></span></p>
+  <p><b>Date & Time:</b> <span id="slot"></span></p>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  const data = JSON.parse(localStorage.getItem('confirmation'));
+  if(data) {
+    document.getElementById('name').innerText = data.name;
+    document.getElementById('age').innerText = data.age;
+    document.getElementById('doctor').innerText = data.doctor;
+    const d = new Date(data.slot);
+    document.getElementById('slot').innerText = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+  }
+
+  function logout() {
+    localStorage.clear();
+    window.location.href = 'index.html';
+  }
+</script>
+
+</body>
+</html>

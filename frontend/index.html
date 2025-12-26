@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Appointment System</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="content-container">
+    
+    <div class="header-section">
+      <h1>Smart Appointment System</h1>
+      <div class="features">
+        <span><i class="fas fa-clock"></i> 24/7 Booking</span>
+        <span><i class="fas fa-shield-alt"></i> Secure Data</span>
+        <span><i class="fas fa-calendar-check"></i> Easy Management</span>
+      </div>
+      <p class="tagline">
+        Your health, scheduled in seconds. Book appointments easily, manage slots efficiently, and experience hassle-free healthcare.
+      </p>
+    </div>
+
+    <div class="form-box">
+      
+      <div id="registerDiv">
+        <h3>Register</h3>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="regUsername" placeholder="Username">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="regPassword" placeholder="Password">
+        </div>
+        <button class="btn-primary" onclick="register()">Register</button>
+        <p class="footer-text">
+          Already have an account? 
+          <span class="switch" onclick="showLogin()">Login</span>
+        </p>
+      </div>
+
+      <div id="loginDiv" style="display:none;">
+        <h3>Login</h3>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="loginUsername" placeholder="Username">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="Password">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-user-tag"></i>
+          <select id="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="login()">Login</button>
+        <p class="footer-text">
+          Don’t have an account? 
+          <span class="switch" onclick="showRegister()">Register</span>
+        </p>
+      </div>
+
+    </div> 
+  </div> 
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
